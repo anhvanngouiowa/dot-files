@@ -18,3 +18,4 @@ done
 # special case .ssh/rc
 [ ! -d ~/.ssh ] && mkdir ~/.ssh && chmod 0700 ~/.ssh
 ln -sf $DOTFILES/.ssh/rc ~/.ssh/rc
+bash .gitconfig
