@@ -355,3 +355,4 @@ login-info
 # os x ssh agent check
 osx-ssh-agent-timeout
 
+source ~/.git-completion.sh
