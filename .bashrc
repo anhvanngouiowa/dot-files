@@ -24,7 +24,7 @@ if [ -h ~/.bashrc ]; then
 else
 	export DOTFILES=""
 fi
-export DOTFILES_REMOTE="https://github.com/borgstrom/dot-files.git"
+export DOTFILES_REMOTE="https://github.com/anhvanngouiowa/dot-files.git"
 export DOTFILES_REF="heads/master"
 export DOTFILES_CHECK_INTERVAL=43200 # 12 hours
 export GIT_EXECUTABLE=$(which git 2>/dev/null)
@@ -356,3 +356,5 @@ login-info
 osx-ssh-agent-timeout
 
 source ~/.git-completion.sh
+
+[[ -s "/home/vagrant/.gvm/scripts/gvm" ]] && source "/home/vagrant/.gvm/scripts/gvm"
