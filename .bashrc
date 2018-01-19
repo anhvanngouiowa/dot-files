@@ -328,6 +328,7 @@ if [ $? = 0 ]; then
 fi
 
 # command aliases - be paranoid & fix typos
+alias cli='/usr/local/bin/mysql_utils/mysql_cli.py -p admin'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -341,6 +342,7 @@ alias gpre='grep'
 alias whcih='which'
 alias snv='svn'
 alias poweroff='echo "Please run /sbin/poweroff to turn off the system"'
+alias sudo='sudo DOCKER_CONFIG=/etc/.docker'
 
 # only run pip with virtualenv and use the active env
 export PIP_REQUIRE_VIRTUALENV=true
@@ -358,3 +360,6 @@ osx-ssh-agent-timeout
 source ~/.git-completion.sh
 
 [[ -s "/home/vagrant/.gvm/scripts/gvm" ]] && source "/home/vagrant/.gvm/scripts/gvm"
+export GOPATH=$HOME/code/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export GOBIN=$GOPATH/bin
