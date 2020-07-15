@@ -28,6 +28,7 @@ export DOTFILES_REMOTE="https://github.com/anhvanngouiowa/dot-files.git"
 export DOTFILES_REF="heads/master"
 export DOTFILES_CHECK_INTERVAL=43200 # 12 hours
 export GIT_EXECUTABLE=$(which git 2>/dev/null)
+export HOSTNAME=$(hostname)
 
 ###
 ### Custom Functions
@@ -58,6 +59,10 @@ randompass() {
                 PASS=""
                 i=$(($i + 1))
         done
+}
+
+_ssh_auth_save() {
+    ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh-auth-sock.$HOSTNAME"
 }
 
 ps1_git_branch() {
@@ -340,6 +345,7 @@ alias mb='mv'
 alias grpe='grep'
 alias gpre='grep'
 alias whcih='which'
+alias tmux='_ssh_auth_save; tmux'
 alias snv='svn'
 alias poweroff='echo "Please run /sbin/poweroff to turn off the system"'
 alias sudo='sudo DOCKER_CONFIG=/etc/.docker'
