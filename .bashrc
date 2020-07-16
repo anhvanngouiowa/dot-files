@@ -62,7 +62,7 @@ randompass() {
 }
 
 _ssh_auth_save() {
-    ln -sf "$SSH_AUTH_SOCK" $HOME/.ssh/ssh-auth-sock.$HOSTNAME
+    ln -sf $SSH_AUTH_SOCK $HOME/.ssh/ssh-auth-sock.$HOSTNAME
 }
 
 ps1_git_branch() {
@@ -346,6 +346,7 @@ alias grpe='grep'
 alias gpre='grep'
 alias whcih='which'
 alias tmux='_ssh_auth_save; tmux'
+alias tmuxe='tmux showenv'
 alias snv='svn'
 alias poweroff='echo "Please run /sbin/poweroff to turn off the system"'
 alias sudo='sudo DOCKER_CONFIG=/etc/.docker'
