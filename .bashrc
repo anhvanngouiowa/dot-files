@@ -62,7 +62,7 @@ randompass() {
 }
 
 _ssh_auth_save() {
-    ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh-auth-sock.$HOSTNAME"
+    ln -sf "$SSH_AUTH_SOCK" $HOME/.ssh/ssh-auth-sock.$HOSTNAME
 }
 
 ps1_git_branch() {
