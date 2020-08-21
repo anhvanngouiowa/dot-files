@@ -33,6 +33,14 @@ export HOSTNAME=$(hostname)
 ###
 ### Custom Functions
 ###
+
+cover () {
+    local t=$(mktemp -t cover)
+    go test $COVERFLAGS -coverprofile=$t $@ \
+        && go tool cover -func=$t \
+        && unlink $t
+}
+
 dmesg_with_human_timestamps () {
     $(type -P dmesg) "$@" | perl -w -e 'use strict;
         my ($uptime) = do { local @ARGV="/proc/uptime";<>}; ($uptime) = ($uptime =~ /^(\d+)\./);
